@@ -6,6 +6,8 @@ Instead of simply displaying calendar dates, TimeScope converts upcoming events 
 
 The system transforms static dates into a **dynamic time awareness tool**.
 
+Live Website: https://timescope-jagratahuja.vercel.app/
+
 ---
 
 # Core Concept
