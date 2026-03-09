@@ -1,121 +1,102 @@
 # TimeScope
 
-TimeScope is a real-time countdown dashboard designed to help users visualize how much time remains until important events.
+TimeScope is a real-time **countdown dashboard** designed to help users visualize how much time remains until important events.
 
 Instead of simply displaying calendar dates, TimeScope converts upcoming events into **live countdown cards** that update continuously. This makes deadlines and milestones easier to understand and prioritize.
 
 The system transforms static dates into a **dynamic time awareness tool**.
 
-Live Website: https://timescope-jagratahuja.vercel.app/
+**Live Website:** [https://timescope-jagratahuja.vercel.app/](https://timescope-jagratahuja.vercel.app/)
 
 ---
 
-# Core Concept
+## Core Concept
 
-Most calendars show **dates**, but they do not clearly communicate how much time remains until an event.
+Most calendars display **dates**, but they do not clearly communicate how much time remains until an event. TimeScope solves this by presenting events in a highly granular format:
 
-TimeScope solves this by displaying events in the form:
-
-3 Days  
-14 Hours  
-22 Minutes  
-10 Seconds Remaining
+* **3 Days**
+* **14 Hours**
+* **22 Minutes**
+* **10 Seconds Remaining**
 
 By continuously updating countdown timers, the application helps users stay aware of upcoming deadlines and milestones.
 
 ---
 
-# Features
+## Features
 
 TimeScope Version 1 includes:
 
-- Event creation
-- Live countdown timers
-- Countdown updates every second
-- Event cards dashboard
-- Time progress visualization
-- Urgency color indicators
-- Event deletion
-- Persistent storage using browser localStorage
-
-These features create a simple but powerful system for tracking upcoming events.
+* **Event Creation:** Easily add new milestones.
+* **Live Countdown Timers:** Updates every single second.
+* **Event Cards Dashboard:** A centralized view of all trackers.
+* **Time Progress Visualization:** See time as a percentage.
+* **Urgency Color Indicators:** Visual cues based on remaining time.
+* **Persistent Storage:** Data is saved using browser `localStorage`.
+* **Event Management:** Quick deletion of completed tasks.
 
 ---
 
-# Dashboard Overview
+## Dashboard Overview
 
-The main interface displays events as **countdown cards**.
+The main interface displays events as **countdown cards**. Events are automatically sorted by **closest deadline first** to ensure the most urgent tasks are always at the top.
 
-Example card:
-
-Chemistry Exam  
-3 Days 12 Hours Remaining  
-
-Progress  
-[████████░░░░░░░░░░░░] 40%
-
-Each card represents a tracked event and updates automatically.
-
-Events are automatically sorted by **closest deadline first**.
+### Example Card:
+> **Chemistry Exam** > 3 Days 12 Hours Remaining  
+> `[████████░░░░░░░░░░░░] 40%`
 
 ---
 
-# Time Progress Visualization
+## Time Progress Visualization
 
-Each event includes a **progress bar** showing how much time has passed since the event was created.
+Each event includes a **progress bar** showing how much time has passed since the event was created. The system calculates:
+1.  Total time until the deadline.
+2.  Time already passed.
+3.  Time remaining.
 
-The system calculates:
-
-- total time until deadline
-- time already passed
-- time remaining
-
-This turns time into a **visual progress indicator**, making deadlines easier to understand.
+This turns abstract dates into a **visual progress indicator**, making deadlines easier to digest at a glance.
 
 ---
 
-# Urgency Indicators
+## Urgency Indicators
 
-TimeScope visually highlights approaching deadlines using colors.
+TimeScope visually highlights approaching deadlines using color-coded urgency levels:
 
-- More than 7 days remaining → Blue
-- 3–7 days remaining → Orange
-- Less than 24 hours remaining → Red
-
-This allows users to quickly recognize urgent events.
+| Time Remaining | Indicator Color |
+| :--- | :--- |
+| **More than 7 days** | Blue |
+| **3–7 days** | Orange |
+| **Less than 24 hours** | Red |
 
 ---
 
-# Technology Stack
+## Technology Stack
 
 TimeScope is built using modern web technologies:
 
-- **Frontend:** React / Next.js
-- **Storage:** Browser localStorage
-- **Deployment:** Vercel
+* **Frontend:** React / Next.js
+* **Storage:** Browser `localStorage`
+* **Deployment:** Vercel
 
 ---
 
-# Future Development
+## Future Development
 
 Planned improvements for future versions include:
-
-- Event categories
-- User authentication
-- Cloud synchronization
-- Event editing
-- Mobile optimized layouts
-
-These features will expand TimeScope into a more powerful time management system.
+* **Event Categories:** Grouping by school, personal, or work.
+* **User Authentication:** Secure accounts for cross-device access.
+* **Cloud Synchronization:** Syncing data across all platforms.
+* **Event Editing:** Modify existing countdowns without deleting.
+* **Mobile-Optimized Layouts:** Enhanced responsiveness for smaller screens.
 
 ---
 
-# License
+## License
 
 This project is licensed under the **MIT License**.
 
 ---
 
-# Author
+## Author
 
 **Jagrat Ahuja**
