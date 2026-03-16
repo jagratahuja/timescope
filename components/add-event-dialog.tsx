@@ -35,6 +35,14 @@ const COLOR_LABELS: Record<CountdownEvent["color"], string> = {
   amber: "Amber",
 }
 
+const FOCUS_RING_MAP: Record<CountdownEvent["color"], string> = {
+  cyan:   "focus-visible:ring-cyan-400   focus-visible:border-cyan-400",
+  blue:   "focus-visible:ring-blue-400   focus-visible:border-blue-400",
+  green:  "focus-visible:ring-emerald-400 focus-visible:border-emerald-400",
+  purple: "focus-visible:ring-violet-400  focus-visible:border-violet-400",
+  amber:  "focus-visible:ring-amber-400   focus-visible:border-amber-400",
+}
+
 export function AddEventDialog({
   open,
   onOpenChange,
@@ -108,9 +116,9 @@ export function AddEventDialog({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="bg-card border-surface-border text-foreground max-w-md">
+      <DialogContent className="bg-card border-surface-border text-foreground max-w-md shadow-[0_0_60px_rgba(59,130,246,0.12)]">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold text-foreground">
+          <DialogTitle className="text-xl font-semibold bg-gradient-to-r from-[#f0f4ff] via-[#00d4ff] to-[#a855f7] bg-clip-text text-transparent">
             New Countdown
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
@@ -129,7 +137,7 @@ export function AddEventDialog({
               placeholder="e.g. Chemistry Exam"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="bg-secondary border-surface-border text-foreground placeholder:text-muted-foreground focus-visible:ring-primary"
+              className={cn("bg-secondary border-surface-border text-foreground placeholder:text-muted-foreground", FOCUS_RING_MAP[color])}
               maxLength={60}
             />
           </div>
@@ -146,7 +154,7 @@ export function AddEventDialog({
                 value={date}
                 min={today}
                 onChange={(e) => setDate(e.target.value)}
-                className="bg-secondary border-surface-border text-foreground [color-scheme:dark] focus-visible:ring-primary"
+                className={cn("bg-secondary border-surface-border text-foreground [color-scheme:dark]", FOCUS_RING_MAP[color])}
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -159,7 +167,7 @@ export function AddEventDialog({
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="bg-secondary border-surface-border text-foreground [color-scheme:dark] focus-visible:ring-primary"
+                className={cn("bg-secondary border-surface-border text-foreground [color-scheme:dark]", FOCUS_RING_MAP[color])}
               />
             </div>
           </div>
@@ -180,11 +188,7 @@ export function AddEventDialog({
                       ? "ring-2 ring-offset-2 ring-offset-card scale-105"
                       : "opacity-60 hover:opacity-100"
                   )}
-                  style={
-                    color === c
-                      ? { ringColor: "currentColor" }
-                      : undefined
-                  }
+                  style={undefined}
                   aria-pressed={color === c}
                   aria-label={`Select ${COLOR_LABELS[c]} color`}
                 >
@@ -220,7 +224,7 @@ export function AddEventDialog({
             <Button
               type="submit"
               disabled={currentCount >= MAX_EVENTS}
-              className="bg-primary text-primary-foreground hover:opacity-90 font-semibold"
+              className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] text-white hover:opacity-90 font-semibold border-0 shadow-[0_0_16px_rgba(59,130,246,0.3)]"
             >
               Add Countdown
             </Button>

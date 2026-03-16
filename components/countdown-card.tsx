@@ -49,11 +49,13 @@ export function CountdownCard({ event, onRemove, onEdit }: CountdownCardProps) {
   return (
     <article
       className={cn(
-        "relative flex flex-col gap-4 rounded-xl p-5 border transition-all",
+        "relative flex flex-col gap-4 rounded-xl p-5 border transition-all overflow-hidden",
         "bg-card border-surface-border",
         colors.glow
       )}
     >
+      {/* Top accent line — color-matched gradient */}
+      <div className={cn("absolute top-0 inset-x-0 h-px bg-gradient-to-r", colors.topAccent)} />
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col gap-1.5 min-w-0">

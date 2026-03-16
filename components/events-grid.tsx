@@ -28,8 +28,8 @@ export function EventsGrid({ events, onRemove, onEdit, hydrated }: EventsGridPro
 
   if (events.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-24 gap-5 text-center">
-        <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center gap-5 text-center">
+        <div className="w-16 h-16 rounded-2xl bg-secondary border border-muted/40 flex items-center justify-center">
           <Timer className="w-8 h-8 text-muted-foreground" />
         </div>
         <div className="flex flex-col gap-2">
